@@ -26,4 +26,24 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 // Start generate password function
-    let generatePassword = function () {}
+    let generatePassword = function () {
+        let passwordLength = prompt("Choose a password length between 8-128");
+console.log(passwordLength);
+if (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+  alert("Please choose a number between 8-128");
+  generatePassword();
+} else {
+  // Ask user what characters they woud like password to have
+  let isUpperCase = confirm("Click OK if you want uppercase letters.");
+  let isLowerCase = confirm("Click OK if you want lowercase letters.");
+  let isNumbers = confirm("Click OK if you want numbers.");
+  let isSpecial = confirm("Click OK if you want special characters.");
+  console.log(isUpperCase, isLowerCase, isNumbers, isSpecial);
+  if (isUpperCase === false &&
+    isLowerCase === false &&
+    isNumbers === false &&
+    isSpecial === false) {
+    alert("You must chose at least one character for your password. Please try again");
+    
+   }
+    }
